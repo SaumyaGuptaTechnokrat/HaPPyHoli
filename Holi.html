@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: linear-gradient(to right, violet, indigo, green, blue, yellow, orange, red);
+        }
+      .multicolortext {
+        
+        background-image: linear-gradient(to left, violet, indigo, green, plum, yellow, orange, red);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-size: 350%;
+        position: relative;
+        left:20%;
+        top:12vh;
+        font-family:cursive;
+        transition:color 5s,font-size 5s;
+
+      }
+      h1 {
+        animation-name: myanimation;
+        animation-duration: 5s;
+        animation-delay: 4s;
+        animation-iteration-count:infinite;
+        animation-direction:alternate-reverse;
+        animation-timing-function:calc();
+    }
+
+@keyframes myanimation {
+   0%   {font-size:20px;
+    position: relative;
+    top:12vh;
+    left:5%;}
+  25%  {color: yellow; font-size:30px;
+    position: relative;
+    top:30vh;
+    left:5%;}
+  50%  {color: blue;font-size:40px;
+    position: relative;
+    top:30vh;
+    right:15%;}
+  100% {color: green;font-size:50px;}
+  }
+    </style>
+    <script>
+        
+        
+        setInterval(function() {
+            document.getElementById('text').style.opacity = (document.getElementById('text').style.opacity == 0 ? 1 : 0);
+            document.style.opacity = (document.style.opacity == 0 ? 1 : 0);
+
+        }, 1000);
+        /*setInterval(function(){
+            document.getElementById('text').style.fontSize= document.getElementById('text').style.fontSize+ '400%';
+            document.getElementById('text').style.backgroundImage='linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red)';
+        },2000);*/
+    </script>
+  </head>
+  <body>
+    <h1>
+      <span id="text" class="multicolortext">HAPPY HOLI</span>
+    </h1>
+  </body>
+</html>
